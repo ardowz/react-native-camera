@@ -151,7 +151,8 @@ public class RCTCameraModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void capture(final ReadableMap options, final Promise promise) {
-        Camera camera = RCTCamera.getInstance().acquireCameraInstance(options.getInt("type"));
+        //Camera camera = RCTCamera.getInstance().acquireCameraInstance(options.getInt("type"));
+        Camera camera = RCTCamera.getInstance().acquireCameraInstance(RCT_CAMERA_TYPE_BACK);
         if (null == camera) {
             promise.reject("No camera found.");
             return;
