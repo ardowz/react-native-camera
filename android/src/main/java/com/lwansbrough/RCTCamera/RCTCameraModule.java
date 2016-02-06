@@ -162,7 +162,8 @@ public class RCTCameraModule extends ReactContextBaseJavaModule {
             public void onPictureTaken(byte[] data, Camera camera) {
                 camera.stopPreview();
                 camera.startPreview();
-                switch (options.getInt("target")) {
+                //switch (options.getInt("target")) {
+                switch (RCT_CAMERA_CAPTURE_TARGET_DISK) {
                     case RCT_CAMERA_CAPTURE_TARGET_MEMORY:
                         String encoded = Base64.encodeToString(data, Base64.DEFAULT);
                         promise.resolve(encoded);
